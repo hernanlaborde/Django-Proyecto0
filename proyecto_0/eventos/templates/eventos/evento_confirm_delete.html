@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form action='.' method="POST">
+    {% csrf_token %}
+    <h1>¿Quiere borrar este evento?: {{ object.nombre }}</h1>
+    <input type = 'submit' value="Eliminar">
+    <a href="{% url 'eventos:evento_list' %}">Cancelar</a>
+</form>
+
+{% endblock %}

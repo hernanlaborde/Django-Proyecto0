@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Eventos</h1>
+<ul>
+{% for evento in object_list %}
+    <li>{{ evento.nombre }}</li>
+    <a href="{% url 'eventos:evento_detail' evento.id %}" class="btn btn-info btn-sm">
+        <i class="fa fa-pencil" aria-hidden="true" style="color: black"></i>
+        Detalle</a>
+    <a href="{% url 'eventos:evento_update' evento.id %}" class="btn btn-warning btn-sm">
+        <i class="fa fa-pencil" aria-hidden="true" style="color: black"></i>
+        Modificar</a>
+    <a href="{% url 'eventos:evento_delete' evento.id %}" class="btn btn-danger btn-sm">
+        <i class="fa fa-pencil" aria-hidden="true" style="color: black"></i>
+        Eliminar</a>
+{% empty %}
+    <li>Aun no se dispone de eventos.</li>
+{% endfor %}
+</ul>
+
+
+{% endblock %}
+
+btn btn-info
+

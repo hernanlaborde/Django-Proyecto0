@@ -1,0 +1,15 @@
+{% extends 'eventos/base.html' %}
+
+{% block content %}
+
+{% if latest_eventos_list %}
+    <ul>
+    {% for evento in latest_eventos_list %}
+        <li><a href="{% url 'eventos:detail' evento.id%}">{{ evento.nombre }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No eventos are available.</p>
+{% endif %}
+
+{% endblock %}
